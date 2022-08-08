@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
-  # root "articles#index"
+  # root 'controller#action'
+  root "flats#index"
+
+  # verb 'path', to: 'controller#action', as: :prefix
+  get '/flats/:id', to: 'flats#show', as: :flat
 end
+
+
+# Controller Actions (CRUD)
+
+# Read all => index (used to be called 'list')
+# Read one => show
